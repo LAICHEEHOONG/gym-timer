@@ -1,0 +1,13 @@
+.control-btn {
+    margin: 10px;
+    width: 300px;
+}
+
+.footer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.hidden {
+    display: none;
+}

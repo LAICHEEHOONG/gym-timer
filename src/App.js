@@ -1,25 +1,99 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import GymNav from './Components/gymNav';
+import GymCountTimer from './Components/gymCount-body';
+import Footer from './Components/footer';
+
+import sound from './Components/done.mp3';
+
+
+class App extends Component {
+
+  state = {
+    s: 0,
+    ms: 0,
+    count: 0,
+    percent: 100,
+    display: 'inline-block'
+  }
+
+  setTimer = (event, second) => {
+
+    this.setState({
+      s: Math.floor(second)
+    })
+    event.preventDefault();
+  }
+
+  runTimer = () => {
+
+    this.setState({ percent: 100, display: 'none' })
+
+
+    if (this.state.s === 0) {
+      return alert('Please set timer...')
+    }
+
+    let setNum = this.state.s;
+
+    let timerInterval = setInterval(() => {
+      this.setState({ ms: this.state.ms + 1 })
+
+
+
+      if (this.state.ms > 9) {
+        this.setState({ ms: 0 })
+        this.setState({
+          s: this.state.s - 1,
+          percent: this.state.percent - 100 / setNum
+
+        })
+
+
+      }
+
+      if (this.state.s === 0) {
+        let audio = new Audio(sound)
+        audio.play();
+        clearInterval(timerInterval)
+        this.setState({
+          s: setNum,
+          count: this.state.count + 1,
+          display: 'inline-block'
+        })
+      }
+
+    }, 100)
+
+
+
+
+  }
+
+  reset = () => {
+    this.setState({
+      s: 0,
+      ms: 0,
+      count: 0,
+      percent: 100
+    })
+  }
+
+
+
+
+  render() {
+    return (
+      <div>
+        <GymNav
+          s={this.state.s}
+          setTimer={this.setTimer}
+        />
+        <GymCountTimer timer={this.state} />
+        <Footer run={this.runTimer} reset={this.reset} percent={this.state.percent} display={this.state.display} />
+      </div>
+    )
+  }
 }
 
 export default App;
