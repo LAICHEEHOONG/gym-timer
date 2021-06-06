@@ -5,8 +5,15 @@ import '../css/gymNav.css';
 
 class GymNav extends Component {
 
+    constructor(props) {
+        super(props)
+
+        this.textInput = React.createRef()
+    }
 
     render() {
+
+        console.log('nav')
 
         let { s, setTimer} = this.props;
 
@@ -18,7 +25,7 @@ class GymNav extends Component {
 
                     <Form className="d-flex">
                         <FormControl
-                         
+                            ref={this.textInput}
                             type="number"
                             placeholder="Seconds"
                             className="mr-2 search-bar"
@@ -31,6 +38,7 @@ class GymNav extends Component {
                         <Button variant="outline-success"
                             onClick={(e) => {
                                 setTimer(e, s)
+                                this.textInput.current.value = '';
                             }}
 
                         >Set Timer</Button>
@@ -41,4 +49,4 @@ class GymNav extends Component {
     }
 }
 
-export default GymNav;
+export default React.memo(GymNav);

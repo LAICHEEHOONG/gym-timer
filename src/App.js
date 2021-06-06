@@ -9,91 +9,92 @@ import sound from './Components/done.mp3';
 
 class App extends Component {
 
-  state = {
-    s: 0,
-    ms: 0,
-    count: 0,
-    percent: 100,
-    display: 'inline-block'
-  }
-
-  setTimer = (event, second) => {
-
-    this.setState({
-      s: Math.floor(second)
-    })
-    event.preventDefault();
-  }
-
-  runTimer = () => {
-
-    this.setState({ percent: 100, display: 'none' })
-
-
-    if (this.state.s === 0) {
-      return alert('Please set timer...')
+    state = {
+        s: 0,
+        ms: 0,
+        count: 0,
+        percent: 100,
+        display: 'inline-block'
     }
 
-    let setNum = this.state.s;
+    setTimer = (event, second) => {
 
-    let timerInterval = setInterval(() => {
-      this.setState({ ms: this.state.ms + 1 })
-
-
-
-      if (this.state.ms > 9) {
-        this.setState({ ms: 0 })
         this.setState({
-          s: this.state.s - 1,
-          percent: this.state.percent - 100 / setNum
-
+            s: Math.floor(second)
         })
+        event.preventDefault();
+    }
 
+    runTimer = () => {
+        if (this.state.s === 0) {
+            alert('Please set timer...');
+            return;
+        }
 
-      }
+        this.setState({ percent: 100, display: 'none' })
 
-      if (this.state.s === 0) {
-        let audio = new Audio(sound)
-        audio.play();
-        clearInterval(timerInterval)
+        let setNum = this.state.s;
+
+        let timerInterval = setInterval(() => {
+            this.setState({ ms: this.state.ms + 1 })
+
+            console.log(this.state.ms)
+
+            if (this.state.ms > 9) {
+                this.setState({ ms: 0 })
+                this.setState({
+                    s: this.state.s - 1,
+                    percent: this.state.percent - 100 / setNum
+
+                })
+
+             
+
+            }
+
+            if (this.state.s === 0) {
+                let audio = new Audio(sound)
+                audio.play();
+                clearInterval(timerInterval)
+                this.setState({
+                    s: setNum,
+                    count: this.state.count + 1,
+                    display: 'inline-block'
+                })
+            }
+
+        }, 100)
+
+    }
+
+    reset = () => {
         this.setState({
-          s: setNum,
-          count: this.state.count + 1,
-          display: 'inline-block'
+            s: 0,
+            ms: 0,
+            count: 0,
+            percent: 100
         })
-      }
-
-    }, 100)
+    }
 
 
 
 
-  }
+    render() {
 
-  reset = () => {
-    this.setState({
-      s: 0,
-      ms: 0,
-      count: 0,
-      percent: 100
-    })
-  }
+        console.log('app')
 
-
-
-
-  render() {
-    return (
-      <div>
-        <GymNav
-          s={this.state.s}
-          setTimer={this.setTimer}
-        />
-        <GymCountTimer timer={this.state} />
-        <Footer run={this.runTimer} reset={this.reset} percent={this.state.percent} display={this.state.display} />
-      </div>
-    )
-  }
+        return (
+            <div>
+                <GymNav s={this.state.s} setTimer={this.setTimer} />
+                <GymCountTimer timer={this.state} />
+                <Footer run={this.runTimer}
+                    reset={this.reset}
+                    percent={this.state.percent}
+                    display={this.state.display}
+                />
+            </div>
+        )
+    }
 }
 
-export default App;
+export default React.memo(App);

@@ -6,7 +6,7 @@ import Count from './count';
 
 const GymCountTimer = ({ timer }) => {
 
-
+    console.log('body-gym-timer')
 
     return (
     <>
@@ -22,4 +22,4 @@ const GymCountTimer = ({ timer }) => {
 
 }
 
-export default GymCountTimer;
+export default React.memo(GymCountTimer);

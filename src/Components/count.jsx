@@ -1,15 +1,14 @@
-import { computeHeadingLevel } from '@testing-library/dom';
 import React from 'react';
 
 import '../css/count.css';
 
-const Count = ({timer: {count}}) => {
-
+const Count = ({ timer: { count } }) => {
+    console.log('count')
     return (
-        <div className='count'>
-            {count}
-        </div>
+        <div className='count'
+        style={{marginLeft: '9px'}}
+        >{count}<span style={{fontSize: '1rem'}} >Times</span></div>
     )
 }
 
-export default Count;
+export default React.memo(Count);
