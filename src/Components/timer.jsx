@@ -6,7 +6,6 @@ import '../css/timer.css'
 
 const Timer = ({timer: {s, ms}}) => {
 
-    console.log('timer')
 
     return (
         <div>

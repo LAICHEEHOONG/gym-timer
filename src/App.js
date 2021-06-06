@@ -81,7 +81,6 @@ class App extends Component {
 
     render() {
 
-        console.log('app')
 
         return (
             <div>

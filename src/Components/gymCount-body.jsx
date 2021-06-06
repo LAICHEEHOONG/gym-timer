@@ -6,7 +6,6 @@ import Count from './count';
 
 const GymCountTimer = ({ timer }) => {
 
-    console.log('body-gym-timer')
 
     return (
     <>

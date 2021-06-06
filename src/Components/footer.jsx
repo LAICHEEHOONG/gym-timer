@@ -6,7 +6,6 @@ import '../css/footer.css';
 
 const Footer = ({ run, reset, percent, display }) => {
 
-    console.log('footer')
 
 
     return (

@@ -13,7 +13,6 @@ class GymNav extends Component {
 
     render() {
 
-        console.log('nav')
 
         let { s, setTimer} = this.props;
 
