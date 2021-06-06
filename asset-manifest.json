@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gym-timer/static/css/main.f5179824.chunk.css",
-    "main.js": "/gym-timer/static/js/main.774ba4a3.chunk.js",
-    "main.js.map": "/gym-timer/static/js/main.774ba4a3.chunk.js.map",
+    "main.js": "/gym-timer/static/js/main.6060e94a.chunk.js",
+    "main.js.map": "/gym-timer/static/js/main.6060e94a.chunk.js.map",
     "runtime-main.js": "/gym-timer/static/js/runtime-main.208586a8.js",
     "runtime-main.js.map": "/gym-timer/static/js/runtime-main.208586a8.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/gym-timer/static/css/2.4c97ca4f.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.699a0155.chunk.js",
     "static/css/main.f5179824.chunk.css",
-    "static/js/main.774ba4a3.chunk.js"
+    "static/js/main.6060e94a.chunk.js"
   ]
 }
