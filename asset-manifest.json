@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/gym-timer/static/css/main.f5179824.chunk.css",
-    "main.js": "/gym-timer/static/js/main.6060e94a.chunk.js",
-    "main.js.map": "/gym-timer/static/js/main.6060e94a.chunk.js.map",
+    "main.css": "/gym-timer/static/css/main.1104beb7.chunk.css",
+    "main.js": "/gym-timer/static/js/main.bc31907d.chunk.js",
+    "main.js.map": "/gym-timer/static/js/main.bc31907d.chunk.js.map",
     "runtime-main.js": "/gym-timer/static/js/runtime-main.208586a8.js",
     "runtime-main.js.map": "/gym-timer/static/js/runtime-main.208586a8.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/gym-timer/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.699a0155.chunk.js": "/gym-timer/static/js/2.699a0155.chunk.js",
-    "static/js/2.699a0155.chunk.js.map": "/gym-timer/static/js/2.699a0155.chunk.js.map",
+    "static/js/2.2feefd62.chunk.js": "/gym-timer/static/js/2.2feefd62.chunk.js",
+    "static/js/2.2feefd62.chunk.js.map": "/gym-timer/static/js/2.2feefd62.chunk.js.map",
     "index.html": "/gym-timer/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/gym-timer/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.f5179824.chunk.css.map": "/gym-timer/static/css/main.f5179824.chunk.css.map",
-    "static/js/2.699a0155.chunk.js.LICENSE.txt": "/gym-timer/static/js/2.699a0155.chunk.js.LICENSE.txt",
+    "static/css/main.1104beb7.chunk.css.map": "/gym-timer/static/css/main.1104beb7.chunk.css.map",
+    "static/js/2.2feefd62.chunk.js.LICENSE.txt": "/gym-timer/static/js/2.2feefd62.chunk.js.LICENSE.txt",
     "static/media/done.33e69535.mp3": "/gym-timer/static/media/done.33e69535.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.208586a8.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.699a0155.chunk.js",
-    "static/css/main.f5179824.chunk.css",
-    "static/js/main.6060e94a.chunk.js"
+    "static/js/2.2feefd62.chunk.js",
+    "static/css/main.1104beb7.chunk.css",
+    "static/js/main.bc31907d.chunk.js"
   ]
 }
