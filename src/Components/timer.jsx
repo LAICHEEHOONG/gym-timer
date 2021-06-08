@@ -1,18 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
-
+import {GymContext} from '../context'
 
 import '../css/timer.css'
 
-const Timer = ({timer: {s, ms}}) => {
+const Timer = () => {
 
-
+    let context = useContext(GymContext)
     return (
         <div>
-            <span className='seconds'>{s}</span>
+            <span className='seconds'>{context.state.s}</span>
             <span>s</span>
-            <span className='millisecond'>   {ms}</span>
-           
+            <span className='millisecond'>   {context.state.ms}</span>
         </div>
     )
 }

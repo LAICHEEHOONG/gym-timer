@@ -4,17 +4,16 @@ import Timer from './timer';
 import Count from './count';
 
 
-const GymCountTimer = ({ timer }) => {
-
+const GymCountTimer = () => {
 
     return (
     <>
         <div className='d-flex justify-content-center'>
-            <Timer timer={timer} />
+            <Timer  />
         </div>
         
         <div className='d-flex justify-content-center'>
-            <Count timer={timer}/>
+            <Count />
         </div>
     </>
     )

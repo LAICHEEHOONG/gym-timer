@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 
+
+import {GymContext} from '../context/index'
+
 import '../css/gymNav.css';
 
 class GymNav extends Component {
+
+    static contextType = GymContext
 
     constructor(props) {
         super(props)
@@ -13,8 +18,6 @@ class GymNav extends Component {
 
     render() {
 
-
-        let { s, setTimer} = this.props;
 
         return (
             <Navbar bg="light" expand="lg"  >
@@ -30,13 +33,13 @@ class GymNav extends Component {
                             className="mr-2 search-bar"
                             aria-label="Timer"
                             onChange={(event) => {
-                                s = event.target.value;
-                                return s
+                                this.context.state.s = event.target.value;
+                                return this.context.state.s 
                             }}
                         />
                         <Button variant="outline-success"
                             onClick={(e) => {
-                                setTimer(e, s)
+                                this.context.setTimer(e, this.context.state.s )
                                 this.textInput.current.value = '';
                             }}
 
