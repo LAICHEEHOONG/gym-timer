@@ -11,3 +11,24 @@
 .hidden {
     display: none;
 }
+
+.progress {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.progress-bar-enter-active {
+    opacity: 0.8;
+}
+
+.progress-bar-enter-done {
+    opacity: 1;
+}
+
+.progress-bar-exit-active {
+    opacity: 0;
+}
+
+.progress-bar-exit-done {
+    opacity: 0;
+}
