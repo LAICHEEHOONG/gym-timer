@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Button, ProgressBar } from 'react-bootstrap';
 import { GymContext } from '../context'
 import { CSSTransition } from 'react-transition-group';
@@ -14,7 +14,7 @@ const Footer = () => {
 
     const percentageToBool = () => {
         let percent = context.state.percent;
-        if(percent === 100 || percent === 0) {
+        if(percent === 100 || percent <= 0) {
             return false
         } else {
             return true
